@@ -1,0 +1,31 @@
+This program receives an input text file of 7-segment invoice numbers, and outputs a text file with the parsed invoice numbers.
+The input file needs to follow this format:
+
+- Each invoice number is constructed of 9 digits [0..9]
+- Invoice number is written using ‘_’ and ‘|’ characters.
+- Invoice number input takes 4 lines.
+- The first 3 lines contain 27 characters.
+- The fourth line is blank.
+
+In this program, a 7-segment digit is represented by a boolean vector in length of 9 (3*3),
+where True indicates a ‘_’ or ‘|’ char is present, and False represents a space char.
+The first 3 variables of the boolean vector are the first row of the 7-segment digit it represents,
+the next 3 variables are the second row, and the last 3 variables are the third row.
+For example, the digit 2, has a 7-segment form of:
+ _
+ _|
+|_
+
+which means, that the first row contains: a space, followed by ‘_’ and another space, represented by False, True, False
+the second row contains: a space, ‘_’, ‘|’ represented by False, True, True
+the third row contains: ‘|’, ‘_’ represented by True, True, False
+therefore, for the digit 2, the boolean vector will be (False, True, False, False, True, True, True, True, False).
+
+configuration.py contains the assumptions. In order to make changes (in the digit size or the number of chars in a line),
+it needs to be done in the configuration file.
+
+
+In order to run the program, this should be done as follow:
+python invoice_parser.py -i <input_file_name> -o <output_file_name>
+python invoice_parser.py -h for those instructions.
+
