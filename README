@@ -26,6 +26,6 @@ it needs to be done in the configuration file.
 
 
 In order to run the program, this should be done as follow:
-python invoice_parser.py -i <input_file_name> -o <output_file_name>
-python invoice_parser.py -h for those instructions.
+python parser.py -i <input_file_name> -o <output_file_name>
+python parser.py -h for those instructions.
 
