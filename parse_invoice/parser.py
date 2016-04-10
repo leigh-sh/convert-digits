@@ -64,7 +64,10 @@ def read_input_file(file_name):
     :param file_name: the name of the input file.
     :return: a matrix of size 27x4n where n is the number of invoices.
     """
-    return open(file_name, 'rb').read().splitlines()
+    try:
+        return open(file_name, 'rb').read().splitlines()
+    except:
+        raise IOError
 
 
 def main(argv):
